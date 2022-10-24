@@ -116,12 +116,10 @@ export const Quizzes = () => {
 
   
   return (
-    <div className="w-full h-[100vh] bg-[color:var(--yellow-light)]">
+    <div className="w-full h-[100vh] bg-[color:var(--yellow-light)] pt-4">
       <div className="container">
         <div className="w-full flex items-center flex-col">
-          <h2>JavaScript quizzes for a better understanding!!</h2>
-          <p className="text-[color:var(--red-light)]">You can do it!</p>
-          {<QuizCard quiz={quiz} answears={answears} handleUserAnswer={handleUserAnswer} userPoints={userPoints}/>}
+          {<QuizCard quizNr={quizNr+1} quiz={quiz} answears={answears} handleUserAnswer={handleUserAnswer} userPoints={userPoints}/>}
         </div>
       </div>
     </div>
