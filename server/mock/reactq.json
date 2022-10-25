@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "question": "What is JSX?",
+    "answears": [
+      { "option": "JASON XEROX.", "correct": false },
+      { "option": "JavScript X - a new feature of JS.", "correct": false },
+      {
+        "option": "It is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like.",
+        "correct": true
+      },
+      {
+        "option": "JSX is a new hook for React.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "question": "How works React DOM with elements?",
+    "answears": [
+      {
+        "option": "React change DOM every time when an event happend",
+        "correct": false
+      },
+      { "option": "React don't work with DOM.", "correct": false },
+      {
+        "option": "React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.",
+        "correct": true
+      },
+      {
+        "option": "React DOM is helpful only when we work with server.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": 3,
+    "question": "What is a `component`?",
+    "answears": [
+      {
+        "option": "Is the initial state of the app",
+        "correct": false
+      },
+      { "option": "is an array of elements.", "correct": false },
+      {
+        "option": "Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.",
+        "correct": true
+      },
+      {
+        "option": "Multiparadigm programing language with dinamic data types which work whery well in browser and not only there.",
+        "correct": false
+      }
+    ]
+  }
+]

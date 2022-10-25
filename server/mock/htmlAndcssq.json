@@ -1,0 +1,43 @@
+[
+	{
+    "_id": 1,
+    "question": "What is CSS?",
+    "answears": [
+      {
+        "option": "A programing language for server side rendering.",
+        "correct": false
+      },
+      {
+        "option":
+          "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML).",
+        "correct": true
+      },
+      {
+        "option":
+          "Multiparadigm programing language with dinamic data types which work whery well in browser and not only there.",
+        "correct": false
+      },
+      {
+        "option":
+          "Cascading style sizes.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "question": "What is HTML?",
+    "answears": [
+      { "option": "Hyper Total Mamam Language.", "correct": false },
+      { "option": "Hy To My Love.", "correct": false },
+      {
+        "option": "Hyper Total Markup Language.",
+        "correct": false
+      },
+      {
+        "option": "Hyper Text Markup Language.",
+        "correct": true
+      }
+    ]
+  }
+]

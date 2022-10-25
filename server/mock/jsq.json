@@ -1,0 +1,53 @@
+[
+  {
+    "_id": 1,
+    "question": "What is JS?",
+    "answears": [
+      { "option": "Markup language.", "correct": false },
+      { "option": "Arabic language.", "correct": false },
+      {
+        "option": "Multiparadigm programing language with dinamic data types which work whery well in browser and not only there.",
+        "correct": true
+      },
+      {
+        "option": "Is a programming language whit a porpuse resolve difficult mathematic problems for science.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "question": "Which is most popular JavaScript engine(JavaScript virtual machine)?",
+    "answears": [
+      { "option": "JS56.", "correct": false },
+      { "option": "BMW JS.", "correct": false },
+      {
+        "option": "V8",
+        "correct": true
+      },
+      {
+        "option": "PHP Python.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "_id": 3,
+    "question": "What is JS?",
+    "answears": [
+      {
+        "option": "The two programming languages have very different syntax, semantics, and use..",
+        "correct": true
+      },
+      { "option": "Yes, of course.", "correct": false },
+      {
+        "option": "The two programming languages was created by the same person and do the same things.",
+        "correct": true
+      },
+      {
+        "option": "JavaScript is used only for backend and Java work in browser.",
+        "correct": false
+      }
+    ]
+  }
+]
