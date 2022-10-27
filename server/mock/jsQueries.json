@@ -33,7 +33,7 @@
   },
   {
     "_id": 3,
-    "question": "What is JS?",
+    "question": "What is the difference between JavaScript and Java?",
     "answears": [
       {
         "option": "The two programming languages have very different syntax, semantics, and use..",
