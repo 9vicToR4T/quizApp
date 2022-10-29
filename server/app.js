@@ -5,11 +5,12 @@ const chalk = require("chalk");
 const { default: mongoose } = require("mongoose");
 // const chalk = require("chalk");
 const initDatabase = require("./startUp/initDatabase.js")
+const routes = require("./routes")
 
 const port = config.get("port") ?? 8080
 
 const app = express();
-
+app.use("/quiz", routes)
 app.use(express.json())
 app.use(urlencoded({extended: false}))
 

@@ -12,4 +12,4 @@ const schema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("HtmlAndCssQueriesModel", schema);
+module.exports = model("HtmlCss", schema, "htmlcss");

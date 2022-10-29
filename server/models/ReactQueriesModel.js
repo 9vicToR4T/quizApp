@@ -12,4 +12,4 @@ const schema = new Schema(
   { timestamps: true }
 );
 
-module.exports = model("ReactQueriesModel", schema);
+module.exports = model("React", schema, "react");
