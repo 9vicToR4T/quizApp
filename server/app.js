@@ -6,10 +6,12 @@ const { default: mongoose } = require("mongoose");
 // const chalk = require("chalk");
 const initDatabase = require("./startUp/initDatabase.js")
 const routes = require("./routes")
+const cors = require("cors")
 
 const port = config.get("port") ?? 8080
 
 const app = express();
+app.use(cors())
 app.use("/quiz", routes)
 app.use(express.json())
 app.use(urlencoded({extended: false}))
@@ -17,7 +19,6 @@ app.use(urlencoded({extended: false}))
 
 // if(process.env.NODE_ENV === "production") console.log("production")
 // if(process.env.NODE_ENV === "development") console.log("development")
-
 
 app.get("/", (req, res) =>{
 	res.send("Hello Victor")

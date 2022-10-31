@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IQuizData } from "../models/models";
 import QuizCard from "../components/quizCard";
+import { useGetJsQueriesQuery } from "../services/quizApi";
 
 const arr: IQuizData[] = [
   {
@@ -22,8 +23,7 @@ const arr: IQuizData[] = [
         correct: false,
       },
       {
-        option:
-          "Cascading style sizes.",
+        option: "Cascading style sizes.",
         correct: false,
       },
     ],
@@ -92,34 +92,48 @@ interface IA {
   option: string;
   correct: boolean;
 }
-  
+
 export const Quizzes = () => {
-  const [quiz, setQuiz] = useState<string>('');
-  const [answears, setAnswears] = useState <IA[]>([])
+  const [quiz, setQuiz] = useState<string>("");
+  const [answears, setAnswears] = useState<IA[]>([]);
   const [quizNr, setQuizNr] = useState<number>(0);
   const [userPoints, setUserPoints] = useState(0);
 
+  const {data} = useGetJsQueriesQuery();
+  console.log( data );
+
+  // const[j, setJ]= useState([])
+
+  // useEffect(() => {
+  //   const j =
+  // }, []);
   useEffect(() => {
     setQuiz(arr[quizNr].question);
-    setAnswears(arr[quizNr].answears)
+    setAnswears(arr[quizNr].answears);
   }, [quizNr]);
 
   const handleUserAnswer = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-  
-    
-      if (event.currentTarget.value === "true") {
+
+    if (event.currentTarget.value === "true") {
       setUserPoints((prevState) => prevState + 1);
     }
     setQuizNr((prevState) => prevState + 1);
   };
 
-  
   return (
     <div className="w-full h-[100vh] bg-[color:var(--yellow-light)] pt-4">
       <div className="container">
         <div className="w-full flex items-center flex-col">
-          {<QuizCard quizNr={quizNr+1} quiz={quiz} answears={answears} handleUserAnswer={handleUserAnswer} userPoints={userPoints}/>}
+          {
+            <QuizCard
+              quizNr={quizNr + 1}
+              quiz={quiz}
+              answears={answears}
+              handleUserAnswer={handleUserAnswer}
+              userPoints={userPoints}
+            />
+          }
         </div>
       </div>
     </div>
