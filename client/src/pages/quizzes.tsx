@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { IQuizData } from "../models/models";
 import QuizCard from "../components/quizCard";
-import { useGetJsQueriesQuery } from "../services/quizApi";
+import { useGetHtmlCssQueriesQuery, useGetJsQueriesQuery, useGetReactQueriesQuery } from "../services/quizApi";
+import { IRes } from '../models/models';
+import { Link } from "react-router-dom";
 
 const arr: IQuizData[] = [
   {
@@ -94,20 +96,35 @@ interface IA {
 }
 
 export const Quizzes = () => {
+
+const[jsQuestions, setJsQuestions] = useState<IRes>();
+const[reactQuestions, setReactQuestions] = useState<IRes>();
+const [htmlcssQuestions, setHtmlcssQuestions] = useState<IRes>();
+
+
+
   const [quiz, setQuiz] = useState<string>("");
   const [answears, setAnswears] = useState<IA[]>([]);
   const [quizNr, setQuizNr] = useState<number>(0);
   const [userPoints, setUserPoints] = useState(0);
 
-  const {data} = useGetJsQueriesQuery();
-  console.log( data );
+  let {data:dataJs, isLoading: isLoadingDataJs} = useGetJsQueriesQuery();
+  let {data: dataReact, isLoading: isLoadingReactData} = useGetReactQueriesQuery()
+  let {data: dataHtmlCss, isLoading: isLoadingHtmlCssData} = useGetHtmlCssQueriesQuery()
+
+  console.log(jsQuestions);
 
   // const[j, setJ]= useState([])
 
-  // useEffect(() => {
-  //   const j =
-  // }, []);
   useEffect(() => {
+    setJsQuestions(dataJs);
+    setReactQuestions(dataReact);
+    setHtmlcssQuestions(dataHtmlCss)
+  }, [dataJs]);
+
+
+  useEffect(() => {
+
     setQuiz(arr[quizNr].question);
     setAnswears(arr[quizNr].answears);
   }, [quizNr]);
@@ -121,9 +138,16 @@ export const Quizzes = () => {
     setQuizNr((prevState) => prevState + 1);
   };
 
+  if(isLoadingDataJs || isLoadingHtmlCssData || isLoadingHtmlCssData) return <p>loading...</p>
+
   return (
     <div className="w-full h-[100vh] bg-[color:var(--yellow-light)] pt-4">
       <div className="container">
+        <div className="w-full flex items-center justify-center direction mb-4">
+          <Link to="/quizzes/js">JS</Link>
+          <Link to="/quizzes/react">React</Link>
+          <Link to="/quizzes/htmlcss">HTML-CSS</Link>
+        </div>
         <div className="w-full flex items-center flex-col">
           {
             <QuizCard
